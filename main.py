@@ -30,7 +30,7 @@ def convert_mp3_to_wav(mp3_file):
 # Example usage
 if __name__ == "__main__":
     # Provide the path to your audio file (either .mp3 or .wav)
-    input_audio_file = "path_to_your_audio_file.wav"  # or .mp3
+    input_audio_file = "C:\\Users\\muhdf\\Downloads\\WhatsApp-Audio-2024-09-23-at-10.57.55_cedb6834.mp3" # or .mp3
     if input_audio_file.endswith(".mp3"):
         input_audio_file = convert_mp3_to_wav(input_audio_file)
     
