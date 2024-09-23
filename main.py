@@ -17,8 +17,15 @@ def transcribe_audio(audio_file):
     options = whisper.DecodingOptions(language="en")
     result = whisper.decode(model, mel, options)
 
-    # Output - text
+    # Output - print transcription text
     print("Transcription: ", result.text)
+
+    # Save transcription to a .txt file
+    output_file = audio_file.replace(".wav", ".txt").replace(".mp3", ".txt")
+    with open(output_file, "w") as f:
+        f.write(result.text)
+
+    print(f"Transcription saved to: {output_file}")
 
 # mp3 to wav conversion
 def convert_mp3_to_wav(mp3_file):
@@ -29,7 +36,7 @@ def convert_mp3_to_wav(mp3_file):
 
 if __name__ == "__main__":
     # Audio path (mp3 or wav file format)
-    input_audio_file = "C:\\Users\\muhdf\\Downloads\\Hello hello good morning....mp3" 
+    input_audio_file = "C:\\Users\\muhdf\\Downloads\\Hello hello good morning....mp3"
     if input_audio_file.endswith(".mp3"):
         input_audio_file = convert_mp3_to_wav(input_audio_file)
     
